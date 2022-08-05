@@ -19,11 +19,13 @@ public class IndexOfCoincedence
 		FrequencyAnalysis freqAnalysis = new FrequencyAnalysis(cipherText);
 		//int N = freqAnalysis.AdLetterFreq().Length;
 		int N = cipherText.Length;
-		foreach (var c in freqAnalysis.AdLetterFreq())
+		double dn = N * (N - 1);
+
+		foreach (int c in freqAnalysis.AdLetterFreq())
         {
-			ic = ic + ((c * (c - 1)) / (N * (N - 1)));
-			Console.WriteLine(ic);
-        } 
+			double numerator = c * (c - 1);
+			ic += ( numerator / dn );
+		} 
 
 		return ic;
 	}

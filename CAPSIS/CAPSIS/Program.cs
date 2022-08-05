@@ -48,7 +48,7 @@ class Software
 
         
         IndexOfCoincedence indexOfCoincedence = new IndexOfCoincedence(cipherText);
-        Console.WriteLine("INDEX OF CO " + indexOfCoincedence.Index());
+        Console.WriteLine("Index of Coincedence " + indexOfCoincedence.Index());
     }
 
     static public void OutputAnalysis()

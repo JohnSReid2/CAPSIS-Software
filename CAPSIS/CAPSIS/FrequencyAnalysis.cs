@@ -64,13 +64,6 @@ public class FrequencyAnalysis
 				i++;
             }
         }
-	
-		Console.WriteLine("LETTER FREQUENCY !!!!!!!!!!!!!!");
-		foreach (var c in observedFreq)
-        {
-			Console.WriteLine(c);
-        }
-		Console.WriteLine("LETTER FREQUENCY !!!!!!!!!!!!!!");
 		return observedFreq;
 	}
 }
