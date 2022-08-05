@@ -12,7 +12,7 @@ public class FrequencyAnalysis
 		cipherText = mainInput;
 	}
 	
-	public void LetterFrequency()
+	public void CharacterFreq()
     {
 		//  create an array of integers of the length
 		//  of the total number of characters 
@@ -40,5 +40,16 @@ public class FrequencyAnalysis
 					c[i]);
 			}
 		}
+	}
+
+
+	public int[] LetterFreq(string text)
+	{ //count occurences of every letter in the text
+		int[] observedFreq = new int[26];
+		foreach (char c in text)
+			if (Software.isEnglishLetter(c))//just English letters are counted
+				observedFreq[c - Software.indexOfLetter(c)]++;   //subtract UNICODE of A or a so the range will be always between 0-25										
+
+		return observedFreq;
 	}
 }

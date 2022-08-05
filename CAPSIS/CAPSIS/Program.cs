@@ -12,8 +12,13 @@ class Software
     //General Analysis Data
     public static int characterCount;
     public static int uniqieCharacters;
+
+    public static bool isEnglishLetter(char c) => (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z');
+    public static int indexOfLetter(char c) => char.IsUpper(c) ? 65 : 97;
+
     static public void Main()
     {
+
         Console.WriteLine("Main Method initiated. Enter Cipher Text:");
         string input = Console.ReadLine(); //Take input from console
 
@@ -38,7 +43,11 @@ class Software
 
         //     ====== Frequency Analysis ======
         FrequencyAnalysis freqAnalysis = new FrequencyAnalysis(cipherText);
-        freqAnalysis.LetterFrequency();
+        freqAnalysis.CharacterFreq();
+
+
+        IndexOfCoincedence indexOfCoincedence = new IndexOfCoincedence(cipherText);
+        //Console.WriteLine(indexOfCoincedence.indexOfCoincidence());
     }
 
     static public void OutputAnalysis()
