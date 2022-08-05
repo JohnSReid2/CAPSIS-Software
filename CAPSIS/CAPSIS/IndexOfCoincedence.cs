@@ -12,6 +12,21 @@ public class IndexOfCoincedence
 	{
 		cipherText = mainInput;
 	}
+	public double Index()
+	{
+		double ic = 0;
+
+		FrequencyAnalysis freqAnalysis = new FrequencyAnalysis(cipherText);
+		//int N = freqAnalysis.AdLetterFreq().Length;
+		int N = cipherText.Length;
+		foreach (var c in freqAnalysis.AdLetterFreq())
+        {
+			ic = ic + ((c * (c - 1)) / (N * (N - 1)));
+			Console.WriteLine(ic);
+        } 
+
+		return ic;
+	}
 }
 
 

@@ -46,8 +46,9 @@ class Software
         freqAnalysis.CharacterFreq();
 
 
+        
         IndexOfCoincedence indexOfCoincedence = new IndexOfCoincedence(cipherText);
-        //Console.WriteLine(indexOfCoincedence.indexOfCoincidence());
+        Console.WriteLine("INDEX OF CO " + indexOfCoincedence.Index());
     }
 
     static public void OutputAnalysis()

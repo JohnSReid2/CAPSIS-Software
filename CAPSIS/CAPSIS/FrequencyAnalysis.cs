@@ -11,12 +11,12 @@ public class FrequencyAnalysis
 	{
 		cipherText = mainInput;
 	}
-	
+
 	public void CharacterFreq()
-    {
+	{
 		//  create an array of integers of the length
 		//  of the total number of characters 
-		int[] c = new int[(int)char.MaxValue]; 
+		int[] c = new int[(int)char.MaxValue];
 
 		string s = cipherText;
 
@@ -29,11 +29,10 @@ public class FrequencyAnalysis
 			c[(int)t]++;
 		}
 
-		          
+
 		for (int i = 0; i < (int)char.MaxValue; i++)
 		{
-			if (c[i] > 0 &&
-			char.IsLetterOrDigit((char)i))
+			if (c[i] > 0 && char.IsLetterOrDigit((char)i))
 			{
 				Console.WriteLine("Letter: {0}  Frequency: {1}",
 					(char)i,
@@ -42,14 +41,36 @@ public class FrequencyAnalysis
 		}
 	}
 
-
-	public int[] LetterFreq(string text)
+	public int[] LetterFreq()
 	{ //count occurences of every letter in the text
 		int[] observedFreq = new int[26];
-		foreach (char c in text)
+		foreach (char c in cipherText)
 			if (Software.isEnglishLetter(c))//just English letters are counted
 				observedFreq[c - Software.indexOfLetter(c)]++;   //subtract UNICODE of A or a so the range will be always between 0-25										
 
+		return observedFreq;
+	}
+
+	public int[] AdLetterFreq()
+    {
+		var count = cipherText.Distinct().Count();
+		int[] observedFreq = new int[count];
+		int i = 0;
+		foreach (var c in LetterFreq())
+        {
+			if (c != 0)
+            {
+				observedFreq[i] = c;
+				i++;
+            }
+        }
+	
+		Console.WriteLine("LETTER FREQUENCY !!!!!!!!!!!!!!");
+		foreach (var c in observedFreq)
+        {
+			Console.WriteLine(c);
+        }
+		Console.WriteLine("LETTER FREQUENCY !!!!!!!!!!!!!!");
 		return observedFreq;
 	}
 }
