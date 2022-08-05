@@ -1,5 +1,9 @@
 ﻿using System;
 using System.Text.RegularExpressions;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 class Software
 {
@@ -31,6 +35,10 @@ class Software
         uniqieCharacters = general.UniqueCharacters();
 
         OutputAnalysis();
+
+        //     ====== Frequency Analysis ======
+        FrequencyAnalysis freqAnalysis = new FrequencyAnalysis(cipherText);
+        freqAnalysis.LetterFrequency();
     }
 
     static public void OutputAnalysis()
@@ -38,8 +46,5 @@ class Software
         Console.WriteLine("--- General Analysis ---");
         Console.WriteLine("Character Count = " + characterCount);
         Console.WriteLine("Unique Character Count = " + uniqieCharacters);
-
-
     }
-
 }
