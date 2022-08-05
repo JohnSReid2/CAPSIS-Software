@@ -1,0 +1,15 @@
+C:\Users\johns\Githup Repos\Capsis_Software\CAPSIS\CAPSIS\bin\Debug\net6.0\CAPSIS.exe
+C:\Users\johns\Githup Repos\Capsis_Software\CAPSIS\CAPSIS\bin\Debug\net6.0\CAPSIS.deps.json
+C:\Users\johns\Githup Repos\Capsis_Software\CAPSIS\CAPSIS\bin\Debug\net6.0\CAPSIS.runtimeconfig.json
+C:\Users\johns\Githup Repos\Capsis_Software\CAPSIS\CAPSIS\bin\Debug\net6.0\CAPSIS.dll
+C:\Users\johns\Githup Repos\Capsis_Software\CAPSIS\CAPSIS\bin\Debug\net6.0\CAPSIS.pdb
+C:\Users\johns\Githup Repos\Capsis_Software\CAPSIS\CAPSIS\obj\Debug\net6.0\CAPSIS.csproj.AssemblyReference.cache
+C:\Users\johns\Githup Repos\Capsis_Software\CAPSIS\CAPSIS\obj\Debug\net6.0\CAPSIS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\johns\Githup Repos\Capsis_Software\CAPSIS\CAPSIS\obj\Debug\net6.0\CAPSIS.AssemblyInfoInputs.cache
+C:\Users\johns\Githup Repos\Capsis_Software\CAPSIS\CAPSIS\obj\Debug\net6.0\CAPSIS.AssemblyInfo.cs
+C:\Users\johns\Githup Repos\Capsis_Software\CAPSIS\CAPSIS\obj\Debug\net6.0\CAPSIS.csproj.CoreCompileInputs.cache
+C:\Users\johns\Githup Repos\Capsis_Software\CAPSIS\CAPSIS\obj\Debug\net6.0\CAPSIS.dll
+C:\Users\johns\Githup Repos\Capsis_Software\CAPSIS\CAPSIS\obj\Debug\net6.0\refint\CAPSIS.dll
+C:\Users\johns\Githup Repos\Capsis_Software\CAPSIS\CAPSIS\obj\Debug\net6.0\CAPSIS.pdb
+C:\Users\johns\Githup Repos\Capsis_Software\CAPSIS\CAPSIS\obj\Debug\net6.0\CAPSIS.genruntimeconfig.cache
+C:\Users\johns\Githup Repos\Capsis_Software\CAPSIS\CAPSIS\obj\Debug\net6.0\ref\CAPSIS.dll
