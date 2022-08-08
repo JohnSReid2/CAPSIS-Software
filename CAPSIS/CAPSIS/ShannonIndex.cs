@@ -20,18 +20,17 @@ public class ShannonIndex
 
 		FrequencyAnalysis freqAnalysis = new FrequencyAnalysis(cipherText);
 
+		int[,] freq2 = freqAnalysis.CharacterFreq();
+		int rows = freq2.GetLength(0);
+		double N = cipherText.Length;
+		int[] freq = new int[rows];
 
-		double N = 0;
-		foreach (char c in cipherText)
-		{
-			if (Software.isEnglishLetter(c))
-				N++;
-		}
+		for (int i = 0; i < rows; i++)
+        {
+			freq[i] = freq2[i, 1];
+        }
 
-
-		
-
-		foreach (double c in freqAnalysis.AdLetterFreq())
+		foreach (double c in freq)
 		{
 			double p = c / N;
 
@@ -41,4 +40,3 @@ public class ShannonIndex
 		return -si;
 	}
 }
-

@@ -43,7 +43,12 @@ class Software
 
         //     ====== Frequency Analysis ======
         FrequencyAnalysis freqAnalysis = new FrequencyAnalysis(cipherText);
-        freqAnalysis.CharacterFreq();
+        int[,] freq = freqAnalysis.CharacterFreq();
+        
+        for (int i = 0; i < freq.GetLength(0); i++)
+        {
+            Console.WriteLine(Convert.ToChar(freq[i , 0]) + ": " + freq[i, 1]);
+        }
 
 
         

@@ -15,7 +15,7 @@ public class FrequencyAnalysis
 		cipherText = mainInput;
 	}
 
-	public void CharacterFreq()
+	public int[,] CharacterFreq()
 	{
 		//  create an array of integers of the length
 		//  of the total number of characters 
@@ -32,19 +32,30 @@ public class FrequencyAnalysis
 			c[(int)t]++;
 		}
 
+		int total = 0;
 
-		for (int i = 0; i < (int)char.MaxValue; i++)
-		{
-			if (c[i] > 0 && char.IsLetterOrDigit((char)i))
-			{
-				Console.WriteLine("Letter: {0}  Frequency: {1}",
-					(char)i,
-					c[i]);
-			}
-		}
+		foreach (int n in c)
+        {
+			if (n > 0)
+				total++;
+        }
 
-        
+		int[,] frequency = new int[total, 2];
 
+		int j = 0;
+		int k = 0;
+		foreach (int n in c)
+        {
+			if (n > 0)
+            {
+				frequency[j, 1] = n;
+				frequency[j, 0] = k;
+				j++;
+            }
+			k++;
+        }
+
+		return frequency;
 	}
 
 	public int[] LetterFreq()
