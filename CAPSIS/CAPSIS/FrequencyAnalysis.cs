@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 public class FrequencyAnalysis
 {
 	string cipherText;
+
+	public record struct LetterDist(char letter, int freq);
+
 	public FrequencyAnalysis(string mainInput)
 	{
 		cipherText = mainInput;
@@ -39,6 +42,9 @@ public class FrequencyAnalysis
 					c[i]);
 			}
 		}
+
+        
+
 	}
 
 	public int[] LetterFreq()

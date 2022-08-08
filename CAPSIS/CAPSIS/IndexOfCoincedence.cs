@@ -17,14 +17,22 @@ public class IndexOfCoincedence
 		double ic = 0;
 
 		FrequencyAnalysis freqAnalysis = new FrequencyAnalysis(cipherText);
-		//int N = freqAnalysis.AdLetterFreq().Length;
-		int N = cipherText.Length;
-		double dn = N * (N - 1);
+
+
+		int N = 0;
+		foreach (char c in cipherText)
+        {
+			if (Software.isEnglishLetter(c))
+				N++;
+        }
+		
+
+		double den = N * (N - 1);
 
 		foreach (int c in freqAnalysis.AdLetterFreq())
         {
-			double numerator = c * (c - 1);
-			ic += ( numerator / dn );
+			double num = c * (c - 1);
+			ic += (num / den);
 		} 
 
 		return ic;

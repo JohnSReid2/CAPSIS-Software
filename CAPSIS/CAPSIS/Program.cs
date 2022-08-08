@@ -49,6 +49,9 @@ class Software
         
         IndexOfCoincedence indexOfCoincedence = new IndexOfCoincedence(cipherText);
         Console.WriteLine("Index of Coincedence " + indexOfCoincedence.Index());
+
+        ShannonIndex shannonIndex = new ShannonIndex(cipherText);
+        Console.WriteLine("Shannon index " + shannonIndex.Index());
     }
 
     static public void OutputAnalysis()
