@@ -26,10 +26,9 @@ class Software
         {cipherText = "null";}       
         else {cipherText = input;}
 
-        //Remove all spaces and convert to uppercase
-        cipherText = String.Concat(cipherText.Where(c => !Char.IsWhiteSpace(c))).ToUpper();
-
+        //     ====== Reformatting ======
         Console.WriteLine("Reformatting cipher text...");
+        cipherText = String.Concat(cipherText.Where(c => !Char.IsWhiteSpace(c))).ToUpper();
         Console.WriteLine(cipherText);
 
 
@@ -44,17 +43,24 @@ class Software
         //     ====== Frequency Analysis ======
         FrequencyAnalysis freqAnalysis = new FrequencyAnalysis(cipherText);
         int[,] freq = freqAnalysis.CharacterFreq();
-        
+        double[,] prob = freqAnalysis.LetterProbability();
+        Console.WriteLine("=== Frequency Analysis ===");
         for (int i = 0; i < freq.GetLength(0); i++)
         {
-            Console.WriteLine(Convert.ToChar(freq[i , 0]) + ": " + freq[i, 1]);
+            Console.WriteLine("Character: " + Convert.ToChar(freq[i , 0]) + "  Frequency: " + freq[i, 1]);
+        }
+        Console.WriteLine("=== Letter Distrubution ===");
+        for (int i = 0; i < prob.GetLength(0); i++)
+        {
+            Console.WriteLine("Character: " + Convert.ToChar(Convert.ToInt32(prob[i, 0])) + "  Percentage: " + (prob[i, 1] * 100) + "%");
         }
 
 
-        
+        //     ====== Index of Coincidence ======
         IndexOfCoincedence indexOfCoincedence = new IndexOfCoincedence(cipherText);
         Console.WriteLine("Index of Coincedence " + indexOfCoincedence.Index());
 
+        //     ====== Entropy Measure ======
         ShannonIndex shannonIndex = new ShannonIndex(cipherText);
         Console.WriteLine("Shannon index " + shannonIndex.Index());
     }
