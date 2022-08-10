@@ -19,17 +19,20 @@ public class IndexOfCoincedence
 		FrequencyAnalysis freqAnalysis = new FrequencyAnalysis(cipherText);
 
 
-		int N = 0;
+		ulong N = 0;
+		
 		foreach (char c in cipherText)
         {
 			if (Software.isEnglishLetter(c))
 				N++;
         }
-		
+		Console.WriteLine("N VALUE ===  " + N);
 
 		double den = N * (N - 1);
+		Console.WriteLine("DENOMINATOR VALUE ====  " + den);
 
-		foreach (int c in freqAnalysis.AdLetterFreq())
+
+		foreach (ulong c in freqAnalysis.AdLetterFreq())
         {
 			double num = c * (c - 1);
 			ic += (num / den);

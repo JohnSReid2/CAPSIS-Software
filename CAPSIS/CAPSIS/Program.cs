@@ -20,7 +20,8 @@ class Software
     {
 
         Console.WriteLine("Main Method initiated. Enter Cipher Text:");
-        string input = Console.ReadLine(); //Take input from console
+        string input = File.ReadAllText(@"C:\Users\johns\Documents\big.txt"); //Take input from console
+        //string input = Console.ReadLine();
 
         if (input == null) 
         {cipherText = "null";}       
@@ -29,7 +30,7 @@ class Software
         //     ====== Reformatting ======
         Console.WriteLine("Reformatting cipher text...");
         cipherText = String.Concat(cipherText.Where(c => !Char.IsWhiteSpace(c))).ToUpper();
-        Console.WriteLine(cipherText);
+        //Console.WriteLine(cipherText);
 
 
         //     ====== GENERAL ANALYSIS ======
