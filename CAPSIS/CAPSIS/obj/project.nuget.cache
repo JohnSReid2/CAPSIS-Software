@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "meSE1w2ITKKbXksg0CkKpurlvOXsmTp3gNpdktl1z9CRP/6Z6NiybM0leYmkQdkF5GvVd64gZBpaelnJ0j+fUg==",
+  "dgSpecHash": "OWNLhfgZ5itiWtkAqoLH70S055eIDhQ59mUqWCnU1EFQ4AjUP9/7nOAKJ+inVA4Pd7fo9TkqXdnHMx3NEi2S1w==",
   "success": true,
   "projectFilePath": "C:\\Users\\johns\\Githup Repos\\Capsis_Software\\CAPSIS\\CAPSIS\\CAPSIS.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\johns\\.nuget\\packages\\oxyplot.core\\2.1.0\\oxyplot.core.2.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

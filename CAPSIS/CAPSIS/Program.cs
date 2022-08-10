@@ -4,6 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using OxyPlot;
+using OxyPlot.Axes;
+using OxyPlot.Legends;
+using OxyPlot.Annotations;
+using OxyPlot.Series;
+using OxyPlot.Utilities;
+
 
 class Software
 {
@@ -71,5 +79,37 @@ class Software
         Console.WriteLine("--- General Analysis ---");
         Console.WriteLine("Character Count = " + characterCount);
         Console.WriteLine("Unique Character Count = " + uniqieCharacters);
+        Graph();
     }
+
+    static public void Graph()
+    {
+        FrequencyAnalysis freqAnalysis = new FrequencyAnalysis(cipherText);
+        int[,] freq = freqAnalysis.CharacterFreq();
+        double[,] prob = freqAnalysis.LetterProbability();
+        var model = new PlotModel { Title = "Letter Frequency" };
+        model.Axes.Add(new CategoryAxis());
+        var series = new BarSeries();
+        model.Series.Add(series);
+
+        double[] vals = new double[26];
+
+        for (int i = 0; i < 26; i++)
+        {
+            vals[i] = prob[i,1];
+        }
+
+        foreach (double f in vals)
+        {
+            series.Items.Add(new BarItem { Value = f * 100 } );
+        }
+
+        using (var stream = File.Create(@"C:\Users\johns\Documents\graph.pdf"))
+        {
+            var pdfExporter = new PdfExporter { Width = 600, Height = 400 };
+            pdfExporter.Export(model, stream);
+        }
+
+    }
+    
 }
