@@ -8,15 +8,12 @@ using System.Threading.Tasks;
 public class FrequencyAnalysis
 {
 	string cipherText;
-
-	public record struct LetterDist(char letter, int freq);
-
 	public FrequencyAnalysis(string mainInput)
 	{
 		cipherText = mainInput;
 	}
 
-	public int[,] CharacterFreq()
+	public int[,] CharacterFreq() //frequency of all unicode characters
 	{
 		//  create an array of integers of the length
 		//  of the total number of characters 
@@ -69,7 +66,7 @@ public class FrequencyAnalysis
 		return observedFreq;
 	}
 
-	public int[] AdLetterFreq()
+	public int[] AdLetterFreq() //returns letter frequency without 0 values
 	{
 		var count = cipherText.Distinct().Count();
 		int[] observedFreq = new int[count];
@@ -85,7 +82,7 @@ public class FrequencyAnalysis
 		return observedFreq;
 	}
 
-	public double[,] LetterProbability()
+	public double[,] LetterProbability() //returns 2d array of letter probabilities
     {
         double[,] probability = new double[26, 2];
 
@@ -114,6 +111,14 @@ public class FrequencyAnalysis
 		return probability;
     }
 }
+
+
+
+
+
+
+
+
 
 public static class JaggedSort
 {
