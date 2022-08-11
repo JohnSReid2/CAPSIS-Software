@@ -26,10 +26,8 @@ public class IndexOfCoincedence
 			if (Software.isEnglishLetter(c))
 				N++;
         }
-		Console.WriteLine("N VALUE ===  " + N);
 
 		double den = N * (N - 1);
-		Console.WriteLine("DENOMINATOR VALUE ====  " + den);
 
 
 		foreach (ulong c in freqAnalysis.AdLetterFreq())
