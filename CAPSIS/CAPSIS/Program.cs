@@ -28,8 +28,8 @@ class Software
     {
 
         Console.WriteLine("Main Method initiated. Enter Cipher Text:");
-        string input = File.ReadAllText(@"C:\Users\johns\Documents\big.txt"); //Take input from console
-        //string input = Console.ReadLine();
+        //string input = File.ReadAllText(@"C:\Users\johns\Documents\big.txt"); //Take input from console
+        string input = Console.ReadLine();
 
         if (input == null) 
         {cipherText = "null";}       
@@ -73,7 +73,7 @@ class Software
         ShannonIndex shannonIndex = new ShannonIndex(cipherText);
         Console.WriteLine("Shannon index " + shannonIndex.Index());
 
-        Bigrams.Blocks blocks = new Bigrams.Blocks(cipherText);
+        Bigrams.SlidingWindow slidingWindow = new Bigrams.SlidingWindow(cipherText);
     }
 
     static public void OutputAnalysis()
