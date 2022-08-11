@@ -64,7 +64,7 @@ class Software
             Console.WriteLine("Character: " + Convert.ToChar(Convert.ToInt32(prob[i, 0])) + "  Percentage: " + (prob[i, 1] * 100) + "%");
         }
 
-
+        
         //     ====== Index of Coincidence ======
         IndexOfCoincedence indexOfCoincedence = new IndexOfCoincedence(cipherText);
         Console.WriteLine("Index of Coincedence " + indexOfCoincedence.Index());
@@ -72,6 +72,8 @@ class Software
         //     ====== Entropy Measure ======
         ShannonIndex shannonIndex = new ShannonIndex(cipherText);
         Console.WriteLine("Shannon index " + shannonIndex.Index());
+
+        Bigrams.Blocks blocks = new Bigrams.Blocks(cipherText);
     }
 
     static public void OutputAnalysis()
