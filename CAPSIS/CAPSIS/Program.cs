@@ -28,13 +28,13 @@ class Software
     {
 
         Console.WriteLine("Main Method initiated. Enter Cipher Text:");
-        //string input = File.ReadAllText(@"C:\Users\johns\Documents\big.txt"); //Take input from console
+        //Recomended inputs: pi.txt, big.txt, bible.txt, enwik8.txt, enwik9.txt (likely to crash), 
+        //string input = File.ReadAllText(@"C:\Users\johns\Documents\enwik8.txt"); //Take input from console
         string input = Console.ReadLine();
 
         if (input == null) 
         {cipherText = "null";}       
         else {cipherText = input;}
-
         //     ====== Reformatting ======
         Console.WriteLine("Reformatting cipher text...");
         cipherText = String.Concat(cipherText.Where(c => !Char.IsWhiteSpace(c))).ToUpper();
@@ -63,7 +63,6 @@ class Software
         {
             Console.WriteLine("Character: " + Convert.ToChar(Convert.ToInt32(prob[i, 0])) + "  Percentage: " + (prob[i, 1] * 100) + "%");
         }
-
         
         //     ====== Index of Coincidence ======
         IndexOfCoincedence indexOfCoincedence = new IndexOfCoincedence(cipherText);
@@ -74,6 +73,13 @@ class Software
         Console.WriteLine("Shannon index " + shannonIndex.Index());
 
         Bigrams.SlidingWindow slidingWindow = new Bigrams.SlidingWindow(cipherText);
+        Bigrams.Blocks blocks = new Bigrams.Blocks(cipherText);
+        Bigrams.BigramCount[] bigramCounts = blocks.frequency();
+
+        for (int i = 0; i < bigramCounts.Length; i++)
+        {
+            Console.WriteLine("BIGRAM:  " + bigramCounts[i].Bigram + "    COUNT: " + bigramCounts[i].Count);
+        }
     }
 
     static public void OutputAnalysis()
