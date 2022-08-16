@@ -37,11 +37,11 @@ namespace Bigrams
 
         public BigramCount[] frequency()
         {
-            int length = BigramList.Length;
+            int length = UniqBigrams.Length;
             BigramCount[] bigramCounts = new BigramCount[length];
 
             int i = 0;
-            foreach (string s in BigramList)
+            foreach (string s in UniqBigrams)
             {
                 bigramCounts[i] = new BigramCount();
                 int occurrences = BigramList.Count(x => x == s);
@@ -89,11 +89,11 @@ namespace Bigrams
         }
         public BigramCount[] frequency()
         {
-            int length = BigramList.Length;
+            int length = UniqBigrams.Length;
             BigramCount[] bigramCounts = new BigramCount[length];
 
             int i = 0;
-            foreach (string s in BigramList)
+            foreach (string s in UniqBigrams)
             {
                 bigramCounts[i] = new BigramCount();
                 int occurrences = BigramList.Count(x => x == s);

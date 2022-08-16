@@ -29,8 +29,8 @@ class Software
 
         Console.WriteLine("Main Method initiated. Enter Cipher Text:");
         //Recomended inputs: pi.txt, big.txt, bible.txt, enwik8.txt, enwik9.txt (likely to crash), 
-        //string input = File.ReadAllText(@"C:\Users\johns\Documents\enwik8.txt"); //Take input from console
-        string input = Console.ReadLine();
+        string input = File.ReadAllText(@"C:\Users\johns\Documents\bible.txt"); //Take input from console
+        //string input = Console.ReadLine();
 
         if (input == null) 
         {cipherText = "null";}       
@@ -76,10 +76,12 @@ class Software
         Bigrams.Blocks blocks = new Bigrams.Blocks(cipherText);
         Bigrams.BigramCount[] bigramCounts = blocks.frequency();
 
+        /*
         for (int i = 0; i < bigramCounts.Length; i++)
         {
             Console.WriteLine("BIGRAM:  " + bigramCounts[i].Bigram + "    COUNT: " + bigramCounts[i].Count);
         }
+        */
     }
 
     static public void OutputAnalysis()
