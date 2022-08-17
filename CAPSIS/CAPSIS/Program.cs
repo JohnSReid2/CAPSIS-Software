@@ -76,15 +76,19 @@ class Software
 
 
         //     ====== Bigrams ======
-        Bigrams.SlidingWindow slidingWindow = new Bigrams.SlidingWindow(cipherText);
-        Bigrams.Blocks blocks = new Bigrams.Blocks(cipherText);
-        Bigrams.BigramCount[] bigramCountsBlocks = blocks.frequency();
-        Bigrams.BigramCount[] bigramCountsWindow = slidingWindow.frequency();
+        Bigrams.SlidingWindow slidingWindowBigram = new Bigrams.SlidingWindow(cipherText);
+        Bigrams.Blocks blocksBigram = new Bigrams.Blocks(cipherText);
 
-        int bigramTotalBlocks = blocks.BigramTotal();
-        int uniqBigramTotalBlocks = blocks.UniqBigramTotal();
-        int bigramTotalWindow = slidingWindow.BigramTotal();
-        int uniqBigramTotalWindow = slidingWindow.UniqBigramTotal();
+
+        
+
+        int bigramTotalBlocks = blocksBigram.BigramTotal();
+        int uniqBigramTotalBlocks = blocksBigram.UniqBigramTotal();
+        int bigramTotalWindow = slidingWindowBigram.BigramTotal();
+        int uniqBigramTotalWindow = slidingWindowBigram.UniqBigramTotal();
+
+        Bigrams.BigramCount[] bigramCountsBlocks = blocksBigram.frequency();
+        Bigrams.BigramCount[] bigramCountsWindow = slidingWindowBigram.frequency();
 
         Console.WriteLine("BLOCKS MODE");
         foreach (var block in bigramCountsBlocks)
@@ -97,6 +101,37 @@ class Software
         {
             Console.WriteLine(block.bigram + "      " + block.count);
         }
+
+
+
+        //     ====== Trigrams ======
+        Trigrams.SlidingWindow slidingWindowTrigram = new Trigrams.SlidingWindow(cipherText);
+        Trigrams.Blocks blocksTrigram = new Trigrams.Blocks(cipherText);
+
+
+
+
+        int trigramTotalBlocks = blocksBigram.BigramTotal();
+        int uniqTrigramTotalBlocks = blocksBigram.UniqBigramTotal();
+        int trigramTotalWindow = slidingWindowBigram.BigramTotal();
+        int uniqTrigramTotalWindow = slidingWindowBigram.UniqBigramTotal();
+
+        Trigrams.TrigramCount[] trigramCountsBlocks = blocksTrigram.frequency();
+        Trigrams.TrigramCount[] trigramCountsWindow = slidingWindowTrigram.frequency();
+
+        Console.WriteLine("BLOCKS MODE");
+        foreach (var block in trigramCountsBlocks)
+        {
+            Console.WriteLine(block.trigram + "      " + block.count);
+        }
+
+        Console.WriteLine("WINDOW MODE");
+        foreach (var block in trigramCountsWindow)
+        {
+            Console.WriteLine(block.trigram + "      " + block.count);
+        }
+
+
     }
 
     static public void OutputAnalysis()
