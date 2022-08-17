@@ -49,4 +49,17 @@ public class GeneralAnalysis
 		}
 		return binary;
 	}
+
+	public bool Alphabetic()
+	{
+		bool alphabetic = true;
+		foreach (char c in cipherText)
+		{
+			if (!Software.isEnglishLetter(c))
+			{
+				alphabetic = false;
+			}
+		}
+		return alphabetic;
+	}
 }
