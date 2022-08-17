@@ -23,4 +23,30 @@ public class GeneralAnalysis
 		var count = cipherText.Distinct().Count();
 		return count;
 	}
+
+	public bool Numerical()
+    {
+		bool numerical = false;
+		foreach (char c in cipherText)
+        {
+			if (Software.isEnglishLetter(c))
+            {
+				numerical = true;
+            }
+        }
+		return numerical;
+    }
+
+	public bool Binary()
+    {
+		bool binary = false;
+		foreach (char c in cipherText)
+		{
+			if (c != Convert.ToChar(0) && c != Convert.ToChar(1))
+			{
+				binary = true;
+			}
+		}
+		return binary;
+	}
 }
