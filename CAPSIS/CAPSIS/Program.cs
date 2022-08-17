@@ -74,12 +74,29 @@ class Software
         ShannonIndex shannonIndex = new ShannonIndex(cipherText);
         Console.WriteLine("Shannon index " + shannonIndex.Index());
 
+
+        //     ====== Bigrams ======
         Bigrams.SlidingWindow slidingWindow = new Bigrams.SlidingWindow(cipherText);
         Bigrams.Blocks blocks = new Bigrams.Blocks(cipherText);
         Bigrams.BigramCount[] bigramCountsBlocks = blocks.frequency();
         Bigrams.BigramCount[] bigramCountsWindow = slidingWindow.frequency();
 
-        
+        int bigramTotalBlocks = blocks.BigramTotal();
+        int uniqBigramTotalBlocks = blocks.UniqBigramTotal();
+        int bigramTotalWindow = slidingWindow.BigramTotal();
+        int uniqBigramTotalWindow = slidingWindow.UniqBigramTotal();
+
+        Console.WriteLine("BLOCKS MODE");
+        foreach (var block in bigramCountsBlocks)
+        {
+            Console.WriteLine(block.bigram + "      " + block.count);
+        }
+
+        Console.WriteLine("WINDOW MODE");
+        foreach (var block in bigramCountsWindow)
+        {
+            Console.WriteLine(block.bigram + "      " + block.count);
+        }
     }
 
     static public void OutputAnalysis()
