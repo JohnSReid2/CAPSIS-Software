@@ -110,6 +110,11 @@ namespace Bigrams
             }
             cipherText = sb.ToString();
             amount = cipherText.Length - 1;
+            if (amount < 0)
+            {
+                amount = 0;
+            }
+                
             BigramList = new string[amount];
             for (int i = 0; i < amount; i++)
             {

@@ -110,6 +110,10 @@ namespace Trigrams
             }
             cipherText = sb.ToString();
             amount = cipherText.Length - 2;
+            if (amount < 0)
+            {
+                amount = 0;
+            }
             TrigramList = new string[amount];
             for (int i = 0; i < amount; i++)
             {
