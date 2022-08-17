@@ -30,8 +30,9 @@ class Software
     {
 
         Console.WriteLine("Main Method initiated. Enter Cipher Text:");
-        //Recomended inputs: pi.txt, big.txt, bible.txt, enwik8.txt, enwik9.txt (likely to crash), 
-        string input = File.ReadAllText(@"C:\Users\johns\Documents\bible.txt"); //Take input from console
+        //Recomended inputs: pi.txt, big.txt, bible.txt, enwik8.txt/enwik9.txt (likely to crash), random.txt, world192.txt
+        //aaa.txt, alphabet.txt
+        string input = File.ReadAllText(@"C:\Users\johns\Documents\random.txt"); //Take input from console
         //string input = Console.ReadLine();
 
         if (input == null) 
@@ -102,6 +103,7 @@ class Software
             Console.WriteLine(block.bigram + "      " + block.count);
         }
 
+        Console.WriteLine("Identical?  " + blocksBigram.IdenticalBigram());
 
 
         //     ====== Trigrams ======
@@ -132,6 +134,10 @@ class Software
         }
 
 
+        Console.WriteLine("Identical bigrams blocks?  " + blocksBigram.IdenticalBigram());
+        Console.WriteLine("Identical bigrams window?  " + slidingWindowBigram.IdenticalBigram());
+        Console.WriteLine("Identical trigrams blocks?  " + blocksTrigram.IdenticalTrigram());
+        Console.WriteLine("Identical trigrams window?  " + slidingWindowTrigram.IdenticalTrigram());
     }
 
     static public void OutputAnalysis()

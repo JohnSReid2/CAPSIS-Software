@@ -69,6 +69,20 @@ namespace Bigrams
             int total = UniqBigrams.Length;
             return total;
         }
+
+        public bool IdenticalBigram()
+        {
+            bool identical = false;
+
+            foreach(string s in UniqBigrams)
+            {
+                if (s[0] == s[1])
+                {
+                    identical = true;
+                }
+            }
+            return identical;
+        }
     }
 
 
@@ -137,6 +151,20 @@ namespace Bigrams
         {
             int total = UniqBigrams.Length;
             return total;
+        }
+
+        public bool IdenticalBigram()
+        {
+            bool identical = false;
+
+            foreach (string s in UniqBigrams)
+            {
+                if (s[0] == s[1])
+                {
+                    identical = true;
+                }
+            }
+            return identical;
         }
     }
 

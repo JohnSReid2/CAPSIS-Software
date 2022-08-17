@@ -69,6 +69,20 @@ namespace Trigrams
             int total = UniqTrigrams.Length;
             return total;
         }
+
+        public bool IdenticalTrigram()
+        {
+            bool identical = false;
+
+            foreach (string s in UniqTrigrams)
+            {
+                if (s[0] == s[1] && s[0] == s[2])
+                {
+                    identical = true;
+                }
+            }
+            return identical;
+        }
     }
 
 
@@ -137,6 +151,20 @@ namespace Trigrams
         {
             int total = UniqTrigrams.Length;
             return total;
+        }
+
+        public bool IdenticalTrigram()
+        {
+            bool identical = false;
+
+            foreach (string s in UniqTrigrams)
+            {
+                if (s[0] == s[1] && s[0] == s[2])
+                {
+                    identical = true;
+                }
+            }
+            return identical;
         }
     }
 
