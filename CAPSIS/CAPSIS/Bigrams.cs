@@ -45,12 +45,25 @@ namespace Bigrams
             {
                 bigramCounts[i] = new BigramCount();
                 int occurrences = BigramList.Count(x => x == s);
-                bigramCounts[i].Bigram = s;
+                bigramCounts[i].bigram = s;
 
-                bigramCounts[i].Count = occurrences;
+                bigramCounts[i].count = occurrences;
                 i++;
             }
             return bigramCounts;
+        }
+
+
+        public int BigramTotal()
+        {
+            int total = BigramList.Length;
+            return total;
+        }
+
+        public int UniqBigramTotal()
+        {
+            int total = UniqBigrams.Length;
+            return total;
         }
     }
 
@@ -97,23 +110,35 @@ namespace Bigrams
             {
                 bigramCounts[i] = new BigramCount();
                 int occurrences = BigramList.Count(x => x == s);
-                bigramCounts[i].Bigram = s;
+                bigramCounts[i].bigram = s;
 
-                bigramCounts[i].Count = occurrences;
+                bigramCounts[i].count = occurrences;
                 i++;
             }
             return bigramCounts;
+        }
+
+        public int BigramTotal()
+        {
+            int total = BigramList.Length;
+            return total;
+        }
+
+        public int UniqBigramTotal()
+        {
+            int total = UniqBigrams.Length;
+            return total;
         }
     }
 
     public class BigramCount
     {
-        public int Count
+        public int count
         {
             get;
             set;
         }
-        public string Bigram
+        public string bigram
         {
             get;
             set;

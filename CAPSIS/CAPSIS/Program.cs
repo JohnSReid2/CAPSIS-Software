@@ -21,6 +21,8 @@ class Software
     public static int characterCount;
     public static int uniqieCharacters;
 
+
+
     public static bool isEnglishLetter(char c) => (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z');
     public static int indexOfLetter(char c) => char.IsUpper(c) ? 65 : 97;
 
@@ -74,14 +76,10 @@ class Software
 
         Bigrams.SlidingWindow slidingWindow = new Bigrams.SlidingWindow(cipherText);
         Bigrams.Blocks blocks = new Bigrams.Blocks(cipherText);
-        Bigrams.BigramCount[] bigramCounts = blocks.frequency();
+        Bigrams.BigramCount[] bigramCountsBlocks = blocks.frequency();
+        Bigrams.BigramCount[] bigramCountsWindow = slidingWindow.frequency();
 
-        /*
-        for (int i = 0; i < bigramCounts.Length; i++)
-        {
-            Console.WriteLine("BIGRAM:  " + bigramCounts[i].Bigram + "    COUNT: " + bigramCounts[i].Count);
-        }
-        */
+        
     }
 
     static public void OutputAnalysis()
