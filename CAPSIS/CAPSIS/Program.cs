@@ -19,7 +19,7 @@ class Software
 
     //General Analysis Data
     public static int characterCount;
-    public static int uniqieCharacters;
+    public static int uniqueCharacters;
 
 
 
@@ -32,8 +32,8 @@ class Software
         Console.WriteLine("Main Method initiated. Enter Cipher Text:");
         //Recomended inputs: pi.txt, big.txt, bible.txt, enwik8.txt/enwik9.txt (likely to crash), random.txt, world192.txt
         //aaa.txt, alphabet.txt
-        string input = File.ReadAllText(@"C:\Users\johns\Documents\pi.txt"); //Take input from console
-        //string input = Console.ReadLine();
+        //string input = File.ReadAllText(@"C:\Users\johns\Documents\pi.txt"); //Take input from console
+        string input = Console.ReadLine();
 
         if (input == null) 
         {cipherText = "null";}       
@@ -48,7 +48,7 @@ class Software
         GeneralAnalysis general = new GeneralAnalysis(cipherText);
 
         characterCount = general.CharacterCount();
-        uniqieCharacters = general.UniqueCharacters();
+        uniqueCharacters = general.UniqueCharacters();
 
         OutputAnalysis();
 
@@ -144,8 +144,8 @@ class Software
     {
         Console.WriteLine("--- General Analysis ---");
         Console.WriteLine("Character Count = " + characterCount);
-        Console.WriteLine("Unique Character Count = " + uniqieCharacters);
-        Graph();
+        Console.WriteLine("Unique Character Count = " + uniqueCharacters);
+        //Graph();
     }
 
     static public void Graph()
@@ -170,7 +170,7 @@ class Software
             series.Items.Add(new BarItem { Value = f * 100 } );
         }
 
-        using (var stream = File.Create(@"C:\Users\johns\Documents\graph.pdf"))
+        using (var stream = File.Create(@"C:\graph.pdf"))
         {
             var pdfExporter = new PdfExporter { Width = 600, Height = 400 };
             pdfExporter.Export(model, stream);

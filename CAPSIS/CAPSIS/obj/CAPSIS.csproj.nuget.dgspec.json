@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\johns\\Githup Repos\\Capsis_Software\\CAPSIS\\CAPSIS\\CAPSIS.csproj": {}
+    "C:\\Users\\matth\\Documents\\CAPSIS-Software\\CAPSIS\\CAPSIS\\CAPSIS.csproj": {}
   },
   "projects": {
-    "C:\\Users\\johns\\Githup Repos\\Capsis_Software\\CAPSIS\\CAPSIS\\CAPSIS.csproj": {
+    "C:\\Users\\matth\\Documents\\CAPSIS-Software\\CAPSIS\\CAPSIS\\CAPSIS.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\johns\\Githup Repos\\Capsis_Software\\CAPSIS\\CAPSIS\\CAPSIS.csproj",
+        "projectUniqueName": "C:\\Users\\matth\\Documents\\CAPSIS-Software\\CAPSIS\\CAPSIS\\CAPSIS.csproj",
         "projectName": "CAPSIS",
-        "projectPath": "C:\\Users\\johns\\Githup Repos\\Capsis_Software\\CAPSIS\\CAPSIS\\CAPSIS.csproj",
-        "packagesPath": "C:\\Users\\johns\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\johns\\Githup Repos\\Capsis_Software\\CAPSIS\\CAPSIS\\obj\\",
+        "projectPath": "C:\\Users\\matth\\Documents\\CAPSIS-Software\\CAPSIS\\CAPSIS\\CAPSIS.csproj",
+        "packagesPath": "C:\\Users\\matth\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\matth\\Documents\\CAPSIS-Software\\CAPSIS\\CAPSIS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\johns\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\matth\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
