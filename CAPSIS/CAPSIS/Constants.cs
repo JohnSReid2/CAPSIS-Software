@@ -62,4 +62,6 @@ namespace VigenereSolver.Library.Helpers
             {'Z', 0.07}
         };
     }
+
+
 }

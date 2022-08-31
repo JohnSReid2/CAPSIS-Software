@@ -33,7 +33,7 @@ class Software
         Console.WriteLine("Main Method initiated. Enter Cipher Text:");
         //Recomended inputs: pi.txt, big.txt, bible.txt, enwik8.txt/enwik9.txt (likely to crash), random.txt, world192.txt
         //aaa.txt, alphabet.txt
-        //string input = File.ReadAllText(@"C:\Users\johns\Documents\pi.txt"); //Take input from console
+        //string input = File.ReadAllText(@"C:\Users\johns\Documents\bible.txt"); //Take input from console
         string input = Console.ReadLine();
 
         if (input == null) 
@@ -150,6 +150,8 @@ class Software
         {
             Console.WriteLine(k);
         }
+
+        
     }
 
     static public void OutputAnalysis()
