@@ -18,7 +18,7 @@ namespace Bigrams
             var sb = new System.Text.StringBuilder();
             foreach (char c in mainInput)
             {
-                if (Software.isEnglishLetter(c))
+                if (char.IsLetterOrDigit(c))
                 {
                     sb.Append(c.ToString());
                 }
@@ -103,7 +103,7 @@ namespace Bigrams
             var sb = new System.Text.StringBuilder();
             foreach (char c in mainInput)
             {
-                if (Software.isEnglishLetter(c))
+                if (char.IsLetterOrDigit(c))
                 {
                     sb.Append(c.ToString());
                 }

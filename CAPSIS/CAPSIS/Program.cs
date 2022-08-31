@@ -15,6 +15,7 @@ using OxyPlot.Utilities;
 
 class Software
 {
+    
     public static string cipherText = "start";
 
     //General Analysis Data
@@ -28,7 +29,7 @@ class Software
 
     static public void Main()
     {
-
+        Console.WriteLine(System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription);
         Console.WriteLine("Main Method initiated. Enter Cipher Text:");
         //Recomended inputs: pi.txt, big.txt, bible.txt, enwik8.txt/enwik9.txt (likely to crash), random.txt, world192.txt
         //aaa.txt, alphabet.txt
@@ -138,6 +139,17 @@ class Software
         Console.WriteLine("Identical bigrams window?  " + slidingWindowBigram.IdenticalBigram());
         Console.WriteLine("Identical trigrams blocks?  " + blocksTrigram.IdenticalTrigram());
         Console.WriteLine("Identical trigrams window?  " + slidingWindowTrigram.IdenticalTrigram());
+
+        //     ===== Kasiski ======
+        Console.WriteLine("Kasiski analysis");
+
+        Kasiski kasiski = new Kasiski();
+        
+        List<int> kas = kasiski.KasiskiExamination(cipherText);
+        foreach (int k in kas)
+        {
+            Console.WriteLine(k);
+        }
     }
 
     static public void OutputAnalysis()
