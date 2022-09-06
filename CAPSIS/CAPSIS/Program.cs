@@ -89,8 +89,8 @@ class Software
         int bigramTotalWindow = slidingWindowBigram.BigramTotal();
         int uniqBigramTotalWindow = slidingWindowBigram.UniqBigramTotal();
 
-        Bigrams.BigramCount[] bigramCountsBlocks = blocksBigram.frequency();
-        Bigrams.BigramCount[] bigramCountsWindow = slidingWindowBigram.frequency();
+        Bigrams.BigramCount[] bigramCountsBlocks = blocksBigram.IdenticalBigramList();
+        Bigrams.BigramCount[] bigramCountsWindow = slidingWindowBigram.IdenticalBigramList();
 
         Console.WriteLine("BLOCKS MODE");
         foreach (var block in bigramCountsBlocks)
@@ -104,7 +104,6 @@ class Software
             Console.WriteLine(block.bigram + "      " + block.count);
         }
 
-        Console.WriteLine("Identical?  " + blocksBigram.IdenticalBigram());
 
 
         //     ====== Trigrams ======
