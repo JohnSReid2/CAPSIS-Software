@@ -23,7 +23,10 @@ class Software
 
 
 
+    //Return true if english letter, false if not
     public static bool isEnglishLetter(char c) => (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z');
+
+    //Return unicode index of letter (capital)
     public static int indexOfLetter(char c) => char.IsUpper(c) ? 65 : 97;
 
     static public void Main()
@@ -32,8 +35,8 @@ class Software
         Console.WriteLine("Main Method initiated. Enter Cipher Text:");
         //Recomended inputs: pi.txt, big.txt, bible.txt, enwik8.txt/enwik9.txt (likely to crash), random.txt, world192.txt
         //aaa.txt, alphabet.txt
-        //string input = File.ReadAllText(@"C:\Users\johns\Documents\pi.txt"); //Take input from console
-        string input = Console.ReadLine();
+        string input = File.ReadAllText(@"C:\Users\matth\Downloads\large\bible.txt"); //Take input from console
+        //string input = Console.ReadLine();
 
         if (input == null) 
         {cipherText = "null";}       
@@ -145,7 +148,7 @@ class Software
         Console.WriteLine("--- General Analysis ---");
         Console.WriteLine("Character Count = " + characterCount);
         Console.WriteLine("Unique Character Count = " + uniqueCharacters);
-        //Graph();
+        Graph();
     }
 
     static public void Graph()
@@ -170,7 +173,7 @@ class Software
             series.Items.Add(new BarItem { Value = f * 100 } );
         }
 
-        using (var stream = File.Create(@"C:\graph.pdf"))
+        using (var stream = File.Create(@"C:\Users\matth\Documents\graph.pdf"))
         {
             var pdfExporter = new PdfExporter { Width = 600, Height = 400 };
             pdfExporter.Export(model, stream);

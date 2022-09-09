@@ -46,11 +46,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\matth\\Documents\\CAPSIS-Software\\CAPSIS\\CAPSIS\\CAPSIS.csproj",
+      "projectUniqueName": "C:\\Users\\matth\\Documents\\Git repositories\\CAPSIS-Software\\CAPSIS\\CAPSIS\\CAPSIS.csproj",
       "projectName": "CAPSIS",
-      "projectPath": "C:\\Users\\matth\\Documents\\CAPSIS-Software\\CAPSIS\\CAPSIS\\CAPSIS.csproj",
+      "projectPath": "C:\\Users\\matth\\Documents\\Git repositories\\CAPSIS-Software\\CAPSIS\\CAPSIS\\CAPSIS.csproj",
       "packagesPath": "C:\\Users\\matth\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\matth\\Documents\\CAPSIS-Software\\CAPSIS\\CAPSIS\\obj\\",
+      "outputPath": "C:\\Users\\matth\\Documents\\Git repositories\\CAPSIS-Software\\CAPSIS\\CAPSIS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\matth\\AppData\\Roaming\\NuGet\\NuGet.Config",
