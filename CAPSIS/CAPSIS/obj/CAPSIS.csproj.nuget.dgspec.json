@@ -1,6 +1,7 @@
 {
   "format": 1,
   "restore": {
+<<<<<<< HEAD
     "C:\\Users\\matth\\Documents\\Git repositories\\CAPSIS-Software\\CAPSIS\\CAPSIS\\CAPSIS.csproj": {}
   },
   "projects": {
@@ -12,9 +13,22 @@
         "projectPath": "C:\\Users\\matth\\Documents\\Git repositories\\CAPSIS-Software\\CAPSIS\\CAPSIS\\CAPSIS.csproj",
         "packagesPath": "C:\\Users\\matth\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\matth\\Documents\\Git repositories\\CAPSIS-Software\\CAPSIS\\CAPSIS\\obj\\",
+=======
+    "C:\\Users\\johns\\Githup Repos\\Capsis_Software\\CAPSIS\\CAPSIS\\CAPSIS.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\johns\\Githup Repos\\Capsis_Software\\CAPSIS\\CAPSIS\\CAPSIS.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\johns\\Githup Repos\\Capsis_Software\\CAPSIS\\CAPSIS\\CAPSIS.csproj",
+        "projectName": "CAPSIS",
+        "projectPath": "C:\\Users\\johns\\Githup Repos\\Capsis_Software\\CAPSIS\\CAPSIS\\CAPSIS.csproj",
+        "packagesPath": "C:\\Users\\johns\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\johns\\Githup Repos\\Capsis_Software\\CAPSIS\\CAPSIS\\obj\\",
+>>>>>>> origin/main
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\matth\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\johns\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -43,6 +57,10 @@
             "OxyPlot.Core": {
               "target": "Package",
               "version": "[2.1.0, )"
+            },
+            "log4net": {
+              "target": "Package",
+              "version": "[2.0.15, )"
             }
           },
           "imports": [
@@ -60,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }

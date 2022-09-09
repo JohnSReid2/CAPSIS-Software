@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime;
 public class GeneralAnalysis
 {
 	string cipherText;
@@ -26,12 +27,12 @@ public class GeneralAnalysis
 
 	public bool Numerical()
     {
-		bool numerical = false;
+		bool numerical = true;
 		foreach (char c in cipherText)
-        {
-			if (Software.isEnglishLetter(c))
+        {		
+			if (!Char.IsNumber(c))
             {
-				numerical = true;
+				numerical = false;
             }
         }
 		return numerical;
@@ -39,15 +40,28 @@ public class GeneralAnalysis
 
 	public bool Binary()
     {
-		bool binary = false;
+		bool binary = true;
 		foreach (char c in cipherText)
 		{
-			if (c != Convert.ToChar(0) && c != Convert.ToChar(1))
+			if (c != '0' && c != '1')
 			{
-				binary = true;
+				binary = false;
 			}
 		}
 		return binary;
+	}
+
+	public bool Morse()
+	{
+		bool morse = true;
+		foreach (char c in cipherText)
+		{
+			if (c != '.' && c != '-')
+			{
+				morse = false;
+			}
+		}
+		return morse;
 	}
 
 	public bool Alphabetic()

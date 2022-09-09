@@ -18,7 +18,7 @@ namespace Bigrams
             var sb = new System.Text.StringBuilder();
             foreach (char c in mainInput)
             {
-                if (Software.isEnglishLetter(c))
+                if (char.IsLetterOrDigit(c))
                 {
                     sb.Append(c.ToString());
                 }
@@ -83,6 +83,43 @@ namespace Bigrams
             }
             return identical;
         }
+
+        public BigramCount[] IdenticalBigramList()
+        {
+
+            int i = 0;
+            int x = 0;
+            foreach (string y in UniqBigrams)
+            {
+                if (y[0] == y[1])
+                {
+                    x++;
+                }    
+            }
+            BigramCount[] bigramCounts = new BigramCount[x];
+            foreach (string s in UniqBigrams)
+            {
+                if (s[0] == s[1])
+                {
+                    bigramCounts[i] = new BigramCount();
+                    int occurrences = BigramList.Count(x => x == s);
+                    bigramCounts[i].bigram = s;
+
+                    bigramCounts[i].count = occurrences;
+                    i++;
+                }               
+            }
+            if (bigramCounts == null)
+            {
+                return null;
+            }
+            else
+            {  
+                return bigramCounts;
+            }         
+        }
+
+
     }
 
 
@@ -103,7 +140,7 @@ namespace Bigrams
             var sb = new System.Text.StringBuilder();
             foreach (char c in mainInput)
             {
-                if (Software.isEnglishLetter(c))
+                if (char.IsLetterOrDigit(c))
                 {
                     sb.Append(c.ToString());
                 }
@@ -171,6 +208,42 @@ namespace Bigrams
             }
             return identical;
         }
+
+        public BigramCount[] IdenticalBigramList()
+        {
+
+            int i = 0;
+            int x = 0;
+            foreach (string y in UniqBigrams)
+            {
+                if (y[0] == y[1])
+                {
+                    x++;
+                }
+            }
+            BigramCount[] bigramCounts = new BigramCount[x];
+            foreach (string s in UniqBigrams)
+            {
+                if (s[0] == s[1])
+                {
+                    bigramCounts[i] = new BigramCount();
+                    int occurrences = BigramList.Count(x => x == s);
+                    bigramCounts[i].bigram = s;
+
+                    bigramCounts[i].count = occurrences;
+                    i++;
+                }
+            }
+            if (bigramCounts == null)
+            {
+                return null;
+            }
+            else
+            {
+                return bigramCounts;
+            }
+        }
+
     }
 
     public class BigramCount

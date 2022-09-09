@@ -15,6 +15,7 @@ using OxyPlot.Utilities;
 
 class Software
 {
+    
     public static string cipherText = "start";
 
     //General Analysis Data
@@ -31,15 +32,24 @@ class Software
 
     static public void Main()
     {
-
+        Console.WriteLine(System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription);
         Console.WriteLine("Main Method initiated. Enter Cipher Text:");
         //Recomended inputs: pi.txt, big.txt, bible.txt, enwik8.txt/enwik9.txt (likely to crash), random.txt, world192.txt
         //aaa.txt, alphabet.txt
+<<<<<<< HEAD
         string input = File.ReadAllText(@"C:\Users\matth\Downloads\large\bible.txt"); //Take input from console
         //string input = Console.ReadLine();
+=======
+        //string input = File.ReadAllText(@"C:\Users\johns\Documents\bible.txt"); //Take input from console
+        string input = Console.ReadLine();
+>>>>>>> origin/main
 
-        if (input == null) 
-        {cipherText = "null";}       
+        if (input == null || input == "")
+        {
+            cipherText = "null";
+            Console.WriteLine("No input provided! Stopping runtime.");
+            return;
+        }       
         else {cipherText = input;}
         //     ====== Reformatting ======
         Console.WriteLine("Reformatting cipher text...");
@@ -55,6 +65,15 @@ class Software
 
         OutputAnalysis();
 
+        IndexOfCoincedence indexOfCoincedence = new IndexOfCoincedence(cipherText);
+        Console.WriteLine("Index of Coincedence: " + indexOfCoincedence.Index());
+        ShannonIndex shannonIndex = new ShannonIndex(cipherText);
+        Console.WriteLine("Shannon index: " + shannonIndex.Index());
+        Console.WriteLine("True Morse code: " + general.Morse());
+        Console.WriteLine("True Numerical: " + general.Numerical());
+        Console.WriteLine("True Alphabetic: " + general.Alphabetic());
+        Console.WriteLine("True Binary: " + general.Binary());
+
         //     ====== Frequency Analysis ======
         FrequencyAnalysis freqAnalysis = new FrequencyAnalysis(cipherText);
         int[,] freq = freqAnalysis.CharacterFreq();
@@ -69,14 +88,10 @@ class Software
         {
             Console.WriteLine("Character: " + Convert.ToChar(Convert.ToInt32(prob[i, 0])) + "  Percentage: " + (prob[i, 1] * 100) + "%");
         }
-        
-        //     ====== Index of Coincidence ======
-        IndexOfCoincedence indexOfCoincedence = new IndexOfCoincedence(cipherText);
-        Console.WriteLine("Index of Coincedence " + indexOfCoincedence.Index());
 
-        //     ====== Entropy Measure ======
-        ShannonIndex shannonIndex = new ShannonIndex(cipherText);
-        Console.WriteLine("Shannon index " + shannonIndex.Index());
+        
+        Console.WriteLine("====================");
+        
 
 
         //     ====== Bigrams ======
@@ -91,8 +106,8 @@ class Software
         int bigramTotalWindow = slidingWindowBigram.BigramTotal();
         int uniqBigramTotalWindow = slidingWindowBigram.UniqBigramTotal();
 
-        Bigrams.BigramCount[] bigramCountsBlocks = blocksBigram.frequency();
-        Bigrams.BigramCount[] bigramCountsWindow = slidingWindowBigram.frequency();
+        Bigrams.BigramCount[] bigramCountsBlocks = blocksBigram.IdenticalBigramList();
+        Bigrams.BigramCount[] bigramCountsWindow = slidingWindowBigram.IdenticalBigramList();
 
         Console.WriteLine("BLOCKS MODE");
         foreach (var block in bigramCountsBlocks)
@@ -106,7 +121,6 @@ class Software
             Console.WriteLine(block.bigram + "      " + block.count);
         }
 
-        Console.WriteLine("Identical?  " + blocksBigram.IdenticalBigram());
 
 
         //     ====== Trigrams ======
@@ -137,18 +151,39 @@ class Software
         }
 
 
-        Console.WriteLine("Identical bigrams blocks?  " + blocksBigram.IdenticalBigram());
-        Console.WriteLine("Identical bigrams window?  " + slidingWindowBigram.IdenticalBigram());
-        Console.WriteLine("Identical trigrams blocks?  " + blocksTrigram.IdenticalTrigram());
-        Console.WriteLine("Identical trigrams window?  " + slidingWindowTrigram.IdenticalTrigram());
+        Console.WriteLine("Identical bigrams blocks: " + blocksBigram.IdenticalBigram());
+        Console.WriteLine("Identical bigrams window: " + slidingWindowBigram.IdenticalBigram());
+        Console.WriteLine("Identical trigrams blocks: " + blocksTrigram.IdenticalTrigram());
+        Console.WriteLine("Identical trigrams window: " + slidingWindowTrigram.IdenticalTrigram());
+
+
+        //     ===== Kasiski ======
+        Console.WriteLine("Kasiski analysis");
+
+        Kasiski kasiski = new Kasiski();
+        
+        List<int> kas = kasiski.KasiskiExamination(cipherText);
+        foreach (int k in kas)
+        {
+            Console.WriteLine(k);
+        }
+
+        
     }
 
     static public void OutputAnalysis()
     {
+<<<<<<< HEAD
         Console.WriteLine("--- General Analysis ---");
         Console.WriteLine("Character Count = " + characterCount);
         Console.WriteLine("Unique Character Count = " + uniqueCharacters);
         Graph();
+=======
+        Console.WriteLine("=== General Analysis ===");
+        Console.WriteLine("Character Count: " + characterCount);
+        Console.WriteLine("Unique Character Count: " + uniqueCharacters);
+        //Graph();
+>>>>>>> origin/main
     }
 
     static public void Graph()
