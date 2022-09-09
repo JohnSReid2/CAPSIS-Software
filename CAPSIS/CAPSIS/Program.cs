@@ -36,13 +36,8 @@ class Software
         Console.WriteLine("Main Method initiated. Enter Cipher Text:");
         //Recomended inputs: pi.txt, big.txt, bible.txt, enwik8.txt/enwik9.txt (likely to crash), random.txt, world192.txt
         //aaa.txt, alphabet.txt
-<<<<<<< HEAD
-        string input = File.ReadAllText(@"C:\Users\matth\Downloads\large\bible.txt"); //Take input from console
-        //string input = Console.ReadLine();
-=======
         //string input = File.ReadAllText(@"C:\Users\johns\Documents\bible.txt"); //Take input from console
         string input = Console.ReadLine();
->>>>>>> origin/main
 
         if (input == null || input == "")
         {
@@ -59,15 +54,19 @@ class Software
 
         //     ====== GENERAL ANALYSIS ======
         GeneralAnalysis general = new GeneralAnalysis(cipherText);
+        IndexOfCoincedence indexOfCoincedence = new IndexOfCoincedence(cipherText);
+        ShannonIndex shannonIndex = new ShannonIndex(cipherText);
+        Reverse reverse = new Reverse(cipherText);
 
         characterCount = general.CharacterCount();
         uniqueCharacters = general.UniqueCharacters();
 
-        OutputAnalysis();
-
-        IndexOfCoincedence indexOfCoincedence = new IndexOfCoincedence(cipherText);
+        Console.WriteLine(reverse.putItInReverseTerr());
+        Console.WriteLine("=== General Analysis ===");
+        Console.WriteLine("Character Count: " + characterCount);
+        Console.WriteLine("Unique Character Count: " + uniqueCharacters);
+        //Graph();
         Console.WriteLine("Index of Coincedence: " + indexOfCoincedence.Index());
-        ShannonIndex shannonIndex = new ShannonIndex(cipherText);
         Console.WriteLine("Shannon index: " + shannonIndex.Index());
         Console.WriteLine("True Morse code: " + general.Morse());
         Console.WriteLine("True Numerical: " + general.Numerical());
@@ -171,20 +170,6 @@ class Software
         
     }
 
-    static public void OutputAnalysis()
-    {
-<<<<<<< HEAD
-        Console.WriteLine("--- General Analysis ---");
-        Console.WriteLine("Character Count = " + characterCount);
-        Console.WriteLine("Unique Character Count = " + uniqueCharacters);
-        Graph();
-=======
-        Console.WriteLine("=== General Analysis ===");
-        Console.WriteLine("Character Count: " + characterCount);
-        Console.WriteLine("Unique Character Count: " + uniqueCharacters);
-        //Graph();
->>>>>>> origin/main
-    }
 
     static public void Graph()
     {

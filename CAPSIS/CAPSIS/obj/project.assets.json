@@ -355,27 +355,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\johns\\.nuget\\packages\\": {}
+    "C:\\Users\\matth\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\matth\\Documents\\Git repositories\\CAPSIS-Software\\CAPSIS\\CAPSIS\\CAPSIS.csproj",
       "projectName": "CAPSIS",
       "projectPath": "C:\\Users\\matth\\Documents\\Git repositories\\CAPSIS-Software\\CAPSIS\\CAPSIS\\CAPSIS.csproj",
       "packagesPath": "C:\\Users\\matth\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\matth\\Documents\\Git repositories\\CAPSIS-Software\\CAPSIS\\CAPSIS\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\johns\\Githup Repos\\Capsis_Software\\CAPSIS\\CAPSIS\\CAPSIS.csproj",
-      "projectName": "CAPSIS",
-      "projectPath": "C:\\Users\\johns\\Githup Repos\\Capsis_Software\\CAPSIS\\CAPSIS\\CAPSIS.csproj",
-      "packagesPath": "C:\\Users\\johns\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\johns\\Githup Repos\\Capsis_Software\\CAPSIS\\CAPSIS\\obj\\",
->>>>>>> origin/main
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\johns\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\matth\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -425,8 +417,16 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\matth\\Documents\\Git repositories\\CAPSIS-Software\\CAPSIS\\CAPSIS\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

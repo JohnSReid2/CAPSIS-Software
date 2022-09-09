@@ -57,3 +57,8 @@ C:\Users\johns\Githup Repos\Capsis_Software\CAPSIS\CAPSIS\bin\Debug\net6.0\Syste
 C:\Users\johns\Githup Repos\Capsis_Software\CAPSIS\CAPSIS\bin\Debug\net6.0\System.Security.Permissions.dll
 C:\Users\johns\Githup Repos\Capsis_Software\CAPSIS\CAPSIS\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 >>>>>>> origin/main
+C:\Users\matth\Documents\Git repositories\CAPSIS-Software\CAPSIS\CAPSIS\bin\Debug\net6.0\log4net.dll
+C:\Users\matth\Documents\Git repositories\CAPSIS-Software\CAPSIS\CAPSIS\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+C:\Users\matth\Documents\Git repositories\CAPSIS-Software\CAPSIS\CAPSIS\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\matth\Documents\Git repositories\CAPSIS-Software\CAPSIS\CAPSIS\bin\Debug\net6.0\System.Security.Permissions.dll
+C:\Users\matth\Documents\Git repositories\CAPSIS-Software\CAPSIS\CAPSIS\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
