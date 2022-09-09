@@ -36,8 +36,12 @@ class Software
         //string input = File.ReadAllText(@"C:\Users\johns\Documents\bible.txt"); //Take input from console
         string input = Console.ReadLine();
 
-        if (input == null) 
-        {cipherText = "null";}       
+        if (input == null || input == "")
+        {
+            cipherText = "null";
+            Console.WriteLine("No input provided! Stopping runtime.");
+            return;
+        }       
         else {cipherText = input;}
         //     ====== Reformatting ======
         Console.WriteLine("Reformatting cipher text...");
@@ -53,6 +57,15 @@ class Software
 
         OutputAnalysis();
 
+        IndexOfCoincedence indexOfCoincedence = new IndexOfCoincedence(cipherText);
+        Console.WriteLine("Index of Coincedence: " + indexOfCoincedence.Index());
+        ShannonIndex shannonIndex = new ShannonIndex(cipherText);
+        Console.WriteLine("Shannon index: " + shannonIndex.Index());
+        Console.WriteLine("True Morse code: " + general.Morse());
+        Console.WriteLine("True Numerical: " + general.Numerical());
+        Console.WriteLine("True Alphabetic: " + general.Alphabetic());
+        Console.WriteLine("True Binary: " + general.Binary());
+
         //     ====== Frequency Analysis ======
         FrequencyAnalysis freqAnalysis = new FrequencyAnalysis(cipherText);
         int[,] freq = freqAnalysis.CharacterFreq();
@@ -67,14 +80,10 @@ class Software
         {
             Console.WriteLine("Character: " + Convert.ToChar(Convert.ToInt32(prob[i, 0])) + "  Percentage: " + (prob[i, 1] * 100) + "%");
         }
-        
-        //     ====== Index of Coincidence ======
-        IndexOfCoincedence indexOfCoincedence = new IndexOfCoincedence(cipherText);
-        Console.WriteLine("Index of Coincedence " + indexOfCoincedence.Index());
 
-        //     ====== Entropy Measure ======
-        ShannonIndex shannonIndex = new ShannonIndex(cipherText);
-        Console.WriteLine("Shannon index " + shannonIndex.Index());
+        
+        Console.WriteLine("====================");
+        
 
 
         //     ====== Bigrams ======
@@ -134,10 +143,11 @@ class Software
         }
 
 
-        Console.WriteLine("Identical bigrams blocks?  " + blocksBigram.IdenticalBigram());
-        Console.WriteLine("Identical bigrams window?  " + slidingWindowBigram.IdenticalBigram());
-        Console.WriteLine("Identical trigrams blocks?  " + blocksTrigram.IdenticalTrigram());
-        Console.WriteLine("Identical trigrams window?  " + slidingWindowTrigram.IdenticalTrigram());
+        Console.WriteLine("Identical bigrams blocks: " + blocksBigram.IdenticalBigram());
+        Console.WriteLine("Identical bigrams window: " + slidingWindowBigram.IdenticalBigram());
+        Console.WriteLine("Identical trigrams blocks: " + blocksTrigram.IdenticalTrigram());
+        Console.WriteLine("Identical trigrams window: " + slidingWindowTrigram.IdenticalTrigram());
+
 
         //     ===== Kasiski ======
         Console.WriteLine("Kasiski analysis");
@@ -155,9 +165,9 @@ class Software
 
     static public void OutputAnalysis()
     {
-        Console.WriteLine("--- General Analysis ---");
-        Console.WriteLine("Character Count = " + characterCount);
-        Console.WriteLine("Unique Character Count = " + uniqueCharacters);
+        Console.WriteLine("=== General Analysis ===");
+        Console.WriteLine("Character Count: " + characterCount);
+        Console.WriteLine("Unique Character Count: " + uniqueCharacters);
         //Graph();
     }
 
