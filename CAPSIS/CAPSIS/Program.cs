@@ -24,7 +24,10 @@ class Software
 
 
 
+    //Return true if english letter, false if not
     public static bool isEnglishLetter(char c) => (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z');
+
+    //Return unicode index of letter (capital)
     public static int indexOfLetter(char c) => char.IsUpper(c) ? 65 : 97;
 
     static public void Main()
@@ -51,15 +54,19 @@ class Software
 
         //     ====== GENERAL ANALYSIS ======
         GeneralAnalysis general = new GeneralAnalysis(cipherText);
+        IndexOfCoincedence indexOfCoincedence = new IndexOfCoincedence(cipherText);
+        ShannonIndex shannonIndex = new ShannonIndex(cipherText);
+        Reverse reverse = new Reverse(cipherText);
 
         characterCount = general.CharacterCount();
         uniqueCharacters = general.UniqueCharacters();
 
-        OutputAnalysis();
-
-        IndexOfCoincedence indexOfCoincedence = new IndexOfCoincedence(cipherText);
+        Console.WriteLine(reverse.putItInReverseTerr());
+        Console.WriteLine("=== General Analysis ===");
+        Console.WriteLine("Character Count: " + characterCount);
+        Console.WriteLine("Unique Character Count: " + uniqueCharacters);
+        //Graph();
         Console.WriteLine("Index of Coincedence: " + indexOfCoincedence.Index());
-        ShannonIndex shannonIndex = new ShannonIndex(cipherText);
         Console.WriteLine("Shannon index: " + shannonIndex.Index());
         Console.WriteLine("True Morse code: " + general.Morse());
         Console.WriteLine("True Numerical: " + general.Numerical());
@@ -163,13 +170,6 @@ class Software
         
     }
 
-    static public void OutputAnalysis()
-    {
-        Console.WriteLine("=== General Analysis ===");
-        Console.WriteLine("Character Count: " + characterCount);
-        Console.WriteLine("Unique Character Count: " + uniqueCharacters);
-        //Graph();
-    }
 
     static public void Graph()
     {
@@ -193,7 +193,7 @@ class Software
             series.Items.Add(new BarItem { Value = f * 100 } );
         }
 
-        using (var stream = File.Create(@"C:\graph.pdf"))
+        using (var stream = File.Create(@"C:\Users\matth\Documents\graph.pdf"))
         {
             var pdfExporter = new PdfExporter { Width = 600, Height = 400 };
             pdfExporter.Export(model, stream);
