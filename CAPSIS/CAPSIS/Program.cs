@@ -56,12 +56,12 @@ class Software
         GeneralAnalysis general = new GeneralAnalysis(cipherText);
         IndexOfCoincedence indexOfCoincedence = new IndexOfCoincedence(cipherText);
         ShannonIndex shannonIndex = new ShannonIndex(cipherText);
-        Reverse reverse = new Reverse(cipherText);
+        //Reverse reverse = new Reverse(cipherText);
 
         characterCount = general.CharacterCount();
         uniqueCharacters = general.UniqueCharacters();
 
-        Console.WriteLine(reverse.putItInReverseTerr());
+        //Console.WriteLine(reverse.putItInReverseTerr());
         Console.WriteLine("=== General Analysis ===");
         Console.WriteLine("Character Count: " + characterCount);
         Console.WriteLine("Unique Character Count: " + uniqueCharacters);

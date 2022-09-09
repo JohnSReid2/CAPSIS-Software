@@ -1,6 +1,0 @@
-C:\Users\johns\Desktop\Capsis Buildsd\CAPSIS.exe
-C:\Users\johns\Desktop\Capsis Buildsd\CAPSIS.dll
-C:\Users\johns\Desktop\Capsis Buildsd\CAPSIS.deps.json
-C:\Users\johns\Desktop\Capsis Buildsd\CAPSIS.runtimeconfig.json
-C:\Users\johns\Desktop\Capsis Buildsd\CAPSIS.pdb
-C:\Users\johns\Desktop\Capsis Buildsd\OxyPlot.dll
