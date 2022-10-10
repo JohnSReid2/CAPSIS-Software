@@ -20,3 +20,4 @@ C:\Users\johns\Githup Repos\Capsis_Software\CAPSIS\CAPSIS\obj\Debug\net6.0\refin
 C:\Users\johns\Githup Repos\Capsis_Software\CAPSIS\CAPSIS\obj\Debug\net6.0\CAPSIS.pdb
 C:\Users\johns\Githup Repos\Capsis_Software\CAPSIS\CAPSIS\obj\Debug\net6.0\CAPSIS.genruntimeconfig.cache
 C:\Users\johns\Githup Repos\Capsis_Software\CAPSIS\CAPSIS\obj\Debug\net6.0\ref\CAPSIS.dll
+C:\Users\johns\Githup Repos\Capsis_Software\CAPSIS\CAPSIS\bin\Debug\net6.0\NTextCat.dll

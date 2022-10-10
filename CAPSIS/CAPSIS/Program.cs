@@ -11,6 +11,7 @@ using OxyPlot.Legends;
 using OxyPlot.Annotations;
 using OxyPlot.Series;
 using OxyPlot.Utilities;
+using NTextCat;
 
 
 class Software
@@ -32,11 +33,10 @@ class Software
 
     static public void Main()
     {
-        Console.WriteLine(System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription);
         Console.WriteLine("Main Method initiated. Enter Cipher Text:");
         //Recomended inputs: pi.txt, big.txt, bible.txt, enwik8.txt/enwik9.txt (likely to crash), random.txt, world192.txt
         //aaa.txt, alphabet.txt
-        //string input = File.ReadAllText(@"C:\Users\johns\Documents\bible.txt"); //Take input from console
+        //string input = File.ReadAllText(@"C:\Users\johns\Documents\big.txt"); //Take input from console
         string input = Console.ReadLine();
 
         if (input == null || input == "")
@@ -48,10 +48,13 @@ class Software
         else {cipherText = input;}
         //     ====== Reformatting ======
         Console.WriteLine("Reformatting cipher text...");
-        cipherText = String.Concat(cipherText.Where(c => !Char.IsWhiteSpace(c))).ToUpper();
+        cipherText = String.Concat(cipherText.Where(c => !Char.IsWhiteSpace(c))).ToLower();
         //Console.WriteLine(cipherText);
 
-
+        Substitution substitution = new Substitution(cipherText);
+        Console.WriteLine(substitution.Solve());
+        /*
+        
         //     ====== GENERAL ANALYSIS ======
         GeneralAnalysis general = new GeneralAnalysis(cipherText);
         IndexOfCoincedence indexOfCoincedence = new IndexOfCoincedence(cipherText);
@@ -166,8 +169,7 @@ class Software
         {
             Console.WriteLine(k);
         }
-
-        
+        */
     }
 
 

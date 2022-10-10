@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "bsoLoQ4uYC9UKNVEbuRwAMHGxNiFU0HP26MBv1D3gm0/P5ymUmW/diZZGXgAs4cIL5X3BQeue2hKdecC94oc7A==",
+  "dgSpecHash": "nRNbpFIQuoZKOQhipFo6R7rt1RHdNWHMj5xGI2Do/IY800KpyZtg2DTAaOgdnhxV75GF2d2dN0ELDYw8V3Y+vQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\johns\\Githup Repos\\Capsis_Software\\CAPSIS\\CAPSIS\\CAPSIS.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\johns\\.nuget\\packages\\log4net\\2.0.15\\log4net.2.0.15.nupkg.sha512",
     "C:\\Users\\johns\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
+    "C:\\Users\\johns\\.nuget\\packages\\ntextcat\\0.3.65\\ntextcat.0.3.65.nupkg.sha512",
     "C:\\Users\\johns\\.nuget\\packages\\oxyplot.core\\2.1.0\\oxyplot.core.2.1.0.nupkg.sha512",
     "C:\\Users\\johns\\.nuget\\packages\\system.configuration.configurationmanager\\4.5.0\\system.configuration.configurationmanager.4.5.0.nupkg.sha512",
     "C:\\Users\\johns\\.nuget\\packages\\system.security.accesscontrol\\4.5.0\\system.security.accesscontrol.4.5.0.nupkg.sha512",
